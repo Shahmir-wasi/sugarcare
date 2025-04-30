@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SugarCare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="images/logo.png" alt="SugarCare Logo">
+                <h1>Sugar<span>Care</span></h1>
+            </div>
+        </div>
+        <div class="sidebar-profile">
+            <div class="profile-image">
+                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Admin Profile">
+            </div>
+            <div class="profile-info">
+                <h3>Admin User</h3>
+                <p>System Administrator</p>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="#overview">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#users">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#patients">
+                        <i class="fas fa-user-injured"></i>
+                        <span>Patients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#doctors">
+                        <i class="fas fa-user-md"></i>
+                        <span>Doctors</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#appointments">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#reports">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings">
+                        <i class="fas fa-cog"></i>
+                        <span>System Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 class="page-title">Overview</h2>
+            </div>
+            <div class="nav-right">
+                <div class="notifications">
+                    <button class="nav-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </button>
+                </div>
+                <div class="messages">
+                    <button class="nav-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">3</span>
+                    </button>
+                </div>
+                <div class="user-menu">
+                    <div class="user-dropdown">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="User">
+                        <span>Admin</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content-wrapper">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Users</h3>
+                            <p class="stat-value">1,248</p>
+                            <p class="stat-time">+42 this month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Patients</h3>
+                            <p class="stat-value">856</p>
+                            <p class="stat-time">+28 this week</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Registered Doctors</h3>
+                            <p class="stat-value">64</p>
+                            <p class="stat-time">+3 this month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Today's Appointments</h3>
+                            <p class="stat-value">127</p>
+                            <p class="stat-time">85% completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>User Growth</h3>
+                            <select class="chart-period">
+                                <option value="month">This Month</option>
+                                <option value="quarter">This Quarter</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userGrowthChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>System Activity</h3>
+                            <select class="chart-period">
+                                <option value="7">Last 7 Days</option>
+                                <option value="14">Last 14 Days</option>
+                                <option value="30">Last 30 Days</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="systemActivityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <div class="section-header">
+                        <h3>Recent System Activity</h3>
+                        <a href="#activity" class="btn secondary-btn">View All Activity</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon admin">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>New doctor registered:</strong> Dr. Lisa Ray</p>
+                                <small>Today at 9:15 AM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>System maintenance scheduled</strong> for tomorrow at 2:00 AM</p>
+                                <small>Today at 8:30 AM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon admin">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Admin user updated</strong> permissions for user #4582</p>
+                                <small>Yesterday at 4:45 PM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon patient">
+                                <i class="fas fa-user-injured"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>12 new patients registered</strong> in the last 24 hours</p>
+                                <small>Yesterday at 11:30 PM</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <div class="section-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="actions-grid">
+                        <a href="#add-user" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h3>Add New User</h3>
+                        </a>
+                        <a href="#manage-doctors" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3>Manage Doctors</h3>
+                        </a>
+                        <a href="#system-settings" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3>System Settings</h3>
+                        </a>
+                        <a href="#generate-reports" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>Generate Reports</h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other sections (Users, Patients, Doctors, etc.) would go here -->
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

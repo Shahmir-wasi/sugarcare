@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | SugarCare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <img src="images/logo.png" alt="SugarCare Logo">
+                    <h1>Sugar<span>Care</span></h1>
+                </div>
+                <h2>Create Your Account</h2>
+            </div>
+            <div class="auth-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="registerPassword" name="password" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <span class="strength-bar weak"></span>
+                                <span class="strength-bar medium"></span>
+                                <span class="strength-bar strong"></span>
+                            </div>
+                            <small class="strength-text">Password strength: <span>Weak</span></small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">I am a:</label>
+                        <select id="userType" name="userType" required>
+                            <option value="">Select Account Type</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Healthcare Provider</option>
+                            <option value="caregiver">Caregiver</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Patient-specific fields -->
+                    <div class="patient-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="diabetesType">Diabetes Type</label>
+                            <select id="diabetesType" name="diabetesType">
+                                <option value="">Select Type</option>
+                                <option value="type1">Type 1 Diabetes</option>
+                                <option value="type2">Type 2 Diabetes</option>
+                                <option value="gestational">Gestational Diabetes</option>
+                                <option value="prediabetes">Prediabetes</option>
+                                <option value="other">Other/Not Specified</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor-specific fields -->
+                    <div class="doctor-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="licenseNumber">Medical License Number</label>
+                            <input type="text" id="licenseNumber" name="licenseNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <input type="text" id="specialization" name="specialization">
+                        </div>
+                        <div class="form-group">
+                            <label for="hospital">Hospital/Clinic</label>
+                            <input type="text" id="hospital" name="hospital">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group terms">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn btn-block">Create Account</button>
+                </form>
+                
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-login">
+                    <button class="btn social-btn google-btn">
+                        <i class="fab fa-google"></i> Register with Google
+                    </button>
+                    <button class="btn social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i> Register with Facebook
+                    </button>
+                </div>
+                
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

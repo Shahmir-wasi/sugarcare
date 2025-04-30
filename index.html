@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SugarCare - Diabetes Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="SugarCare Logo">
+                <h1>Sugar<span>Care</span></h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn login-btn">Login</a>
+                <a href="register.html" class="btn register-btn">Register</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="home">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('images/hero1.jpg');">
+                <div class="slide-content">
+                    <h2>Comprehensive Diabetes Management</h2>
+                    <p>Track, analyze, and manage your diabetes with our all-in-one platform</p>
+                    <a href="#dashboard" class="btn primary-btn">Get Started</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/hero2.jpg');">
+                <div class="slide-content">
+                    <h2>Personalized Health Insights</h2>
+                    <p>Get customized recommendations based on your health data</p>
+                    <a href="#dashboard" class="btn primary-btn">View Dashboard</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/hero3.jpg');">
+                <div class="slide-content">
+                    <h2>Connect with Healthcare Professionals</h2>
+                    <p>Schedule appointments and share data with your care team</p>
+                    <a href="#dashboard" class="btn primary-btn">Book Appointment</a>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Glucose Monitoring</h3>
+                    <p>Track your blood sugar levels with detailed charts and trends analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Medication Management</h3>
+                    <p>Never miss a dose with our medication reminders and tracking system.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Diet & Exercise</h3>
+                    <p>Log meals and activities to understand their impact on your glucose levels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Doctor Connect</h3>
+                    <p>Share your health data and communicate with your healthcare providers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Lab Results</h3>
+                    <p>Store and analyze your lab test results in one secure place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Health History</h3>
+                    <p>Maintain a complete record of your medical history and conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <h2 class="section-title">Patient Dashboard</h2>
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="glucose">Glucose Levels</button>
+                <button class="tab-btn" data-tab="medications">Medications</button>
+                <button class="tab-btn" data-tab="diet">Diet & Exercise</button>
+                <button class="tab-btn" data-tab="appointments">Appointments</button>
+                <button class="tab-btn" data-tab="history">Medical History</button>
+                <button class="tab-btn" data-tab="labs">Lab Results</button>
+            </div>
+            
+            <div class="tab-content active" id="overview">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Last Glucose Reading</h3>
+                        <p class="stat-value">126 <span>mg/dL</span></p>
+                        <p class="stat-info">2 hours after meal</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Next Medication</h3>
+                        <p class="stat-value">Metformin</p>
+                        <p class="stat-info">Due in 1 hour 15 min</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Upcoming Appointment</h3>
+                        <p class="stat-value">Dr. Smith</p>
+                        <p class="stat-info">Tomorrow at 10:30 AM</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Recent Activity</h3>
+                        <p class="stat-value">30 min walk</p>
+                        <p class="stat-info">Today at 7:00 AM</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="glucoseChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="glucose">
+                <div class="section-header">
+                    <h3>Glucose Level Tracking</h3>
+                    <button class="btn primary-btn" id="addGlucoseBtn">Add New Reading</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Glucose Level</th>
+                                <th>Measurement Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-06-15 08:30</td>
+                                <td>98 mg/dL</td>
+                                <td>Fasting</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-06-14 12:45</td>
+                                <td>142 mg/dL</td>
+                                <td>Post-meal (2hr)</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-06-14 18:20</td>
+                                <td>118 mg/dL</td>
+                                <td>Random</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="glucose-form-container" id="glucoseFormContainer" style="display: none;">
+                    <form id="glucoseForm">
+                        <div class="form-group">
+                            <label for="glucoseLevel">Glucose Level (mg/dL)</label>
+                            <input type="number" id="glucoseLevel" name="glucoseLevel" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="measurementTime">Measurement Time</label>
+                            <input type="datetime-local" id="measurementTime" name="measurementTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="measurementType">Measurement Type</label>
+                            <select id="measurementType" name="measurementType" required>
+                                <option value="">Select Type</option>
+                                <option value="Fasting">Fasting</option>
+                                <option value="Post-meal (1hr)">Post-meal (1hr)</option>
+                                <option value="Post-meal (2hr)">Post-meal (2hr)</option>
+                                <option value="Random">Random</option>
+                                <option value="Bedtime">Bedtime</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Save</button>
+                            <button type="button" class="btn secondary-btn" id="cancelGlucoseBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="medications">
+                <div class="section-header">
+                    <h3>Medication Management</h3>
+                    <button class="btn primary-btn" id="addMedicationBtn">Add New Medication</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Medication Name</th>
+                                <th>Dosage</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Prescribed By</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Metformin</td>
+                                <td>500mg twice daily</td>
+                                <td>2023-05-10</td>
+                                <td>-</td>
+                                <td>Dr. Smith</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Insulin Glargine</td>
+                                <td>20 units at bedtime</td>
+                                <td>2023-06-01</td>
+                                <td>-</td>
+                                <td>Dr. Johnson</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="medication-form-container" id="medicationFormContainer" style="display: none;">
+                    <form id="medicationForm">
+                        <div class="form-group">
+                            <label for="medicationName">Medication Name</label>
+                            <input type="text" id="medicationName" name="medicationName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dosage">Dosage</label>
+                            <input type="text" id="dosage" name="dosage" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date (if applicable)</label>
+                            <input type="date" id="endDate" name="endDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="prescribedBy">Prescribed By</label>
+                            <select id="prescribedBy" name="prescribedBy" required>
+                                <option value="">Select Doctor</option>
+                                <option value="1">Dr. Smith</option>
+                                <option value="2">Dr. Johnson</option>
+                                <option value="3">Dr. Williams</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Save</button>
+                            <button type="button" class="btn secondary-btn" id="cancelMedicationBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="diet">
+                <div class="section-header">
+                    <h3>Diet & Exercise Log</h3>
+                    <button class="btn primary-btn" id="addDietExerciseBtn">Add New Entry</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Diet Description</th>
+                                <th>Exercise Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-06-15</td>
+                                <td>Breakfast: Oatmeal with berries. Lunch: Grilled chicken with vegetables.</td>
+                                <td>30 minute walk in the morning</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-06-14</td>
+                                <td>Breakfast: Scrambled eggs. Lunch: Salmon salad. Dinner: Stir-fry tofu.</td>
+                                <td>15 minute yoga session</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="diet-form-container" id="dietFormContainer" style="display: none;">
+                    <form id="dietExerciseForm">
+                        <div class="form-group">
+                            <label for="logDate">Date</label>
+                            <input type="date" id="logDate" name="logDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietDescription">Diet Description</label>
+                            <textarea id="dietDescription" name="dietDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exerciseDescription">Exercise Description</label>
+                            <textarea id="exerciseDescription" name="exerciseDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Save</button>
+                            <button type="button" class="btn secondary-btn" id="cancelDietExerciseBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="appointments">
+                <div class="section-header">
+                    <h3>Appointments</h3>
+                    <button class="btn primary-btn" id="addAppointmentBtn">Schedule Appointment</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Doctor</th>
+                                <th>Reason</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-06-20 10:30</td>
+                                <td>Dr. Smith</td>
+                                <td>Routine checkup</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-06-05 14:00</td>
+                                <td>Dr. Johnson</td>
+                                <td>Medication review</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>
+                                    <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="appointment-form-container" id="appointmentFormContainer" style="display: none;">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="appointmentDoctor">Doctor</label>
+                            <select id="appointmentDoctor" name="appointmentDoctor" required>
+                                <option value="">Select Doctor</option>
+                                <option value="1">Dr. Smith (Endocrinologist)</option>
+                                <option value="2">Dr. Johnson (Diabetologist)</option>
+                                <option value="3">Dr. Williams (General Physician)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Date & Time</label>
+                            <input type="datetime-local" id="appointmentDate" name="appointmentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentReason">Reason</label>
+                            <textarea id="appointmentReason" name="appointmentReason" rows="3" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Schedule</button>
+                            <button type="button" class="btn secondary-btn" id="cancelAppointmentBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="history">
+                <div class="section-header">
+                    <h3>Medical History</h3>
+                    <button class="btn primary-btn" id="addHistoryBtn">Add New Entry</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Condition Name</th>
+                                <th>Diagnosis Date</th>
+                                <th>Treatment</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Type 2 Diabetes</td>
+                                <td>2021-03-15</td>
+                                <td>Metformin, diet control, exercise</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Hypertension</td>
+                                <td>2022-01-10</td>
+                                <td>Lisinopril 10mg daily</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="history-form-container" id="historyFormContainer" style="display: none;">
+                    <form id="historyForm">
+                        <div class="form-group">
+                            <label for="conditionName">Condition Name</label>
+                            <input type="text" id="conditionName" name="conditionName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="diagnosisDate">Diagnosis Date</label>
+                            <input type="date" id="diagnosisDate" name="diagnosisDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="treatment">Treatment</label>
+                            <textarea id="treatment" name="treatment" rows="3" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Save</button>
+                            <button type="button" class="btn secondary-btn" id="cancelHistoryBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="labs">
+                <div class="section-header">
+                    <h3>Lab Results</h3>
+                    <button class="btn primary-btn" id="addLabResultBtn">Add New Result</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Test Date</th>
+                                <th>Result Value</th>
+                                <th>Unit</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HbA1c</td>
+                                <td>2023-06-10</td>
+                                <td>6.5</td>
+                                <td>%</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fasting Glucose</td>
+                                <td>2023-06-10</td>
+                                <td>112</td>
+                                <td>mg/dL</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cholesterol</td>
+                                <td>2023-05-15</td>
+                                <td>190</td>
+                                <td>mg/dL</td>
+                                <td>
+                                    <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lab-form-container" id="labFormContainer" style="display: none;">
+                    <form id="labResultForm">
+                        <div class="form-group">
+                            <label for="testName">Test Name</label>
+                            <input type="text" id="testName" name="testName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="testDate">Test Date</label>
+                            <input type="date" id="testDate" name="testDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="resultValue">Result Value</label>
+                            <input type="text" id="resultValue" name="resultValue" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="unit">Unit</label>
+                            <input type="text" id="unit" name="unit" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Save</button>
+                            <button type="button" class="btn secondary-btn" id="cancelLabResultBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About SugarCare</h2>
+                    <p>SugarCare is a comprehensive diabetes management system designed to help patients and healthcare providers work together to achieve better health outcomes.</p>
+                    <p>Our platform integrates all aspects of diabetes care - from glucose monitoring and medication management to diet tracking and appointment scheduling - into one easy-to-use interface.</p>
+                    <p>With SugarCare, you can:</p>
+                    <ul>
+                        <li>Track your glucose levels and identify patterns</li>
+                        <li>Manage medications and set reminders</li>
+                        <li>Log meals and exercise activities</li>
+                        <li>Share data with your healthcare team</li>
+                        <li>Access your health records anytime, anywhere</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="About SugarCare">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"SugarCare has completely transformed how I manage my diabetes. The glucose tracking features help me understand how different foods affect my levels, and my doctor loves having access to all my data."</p>
+                        <div class="testimonial-author">
+                            <img src="images/user1.jpg" alt="Sarah J.">
+                            <div>
+                                <h4>Sarah J.</h4>
+                                <p>Type 2 Diabetes Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"As a physician, I appreciate how SugarCare gives me a complete picture of my patients' health between visits. The medication tracking and appointment features save me so much time."</p>
+                        <div class="testimonial-author">
+                            <img src="images/user2.jpg" alt="Dr. Michael R.">
+                            <div>
+                                <h4>Dr. Michael R.</h4>
+                                <p>Endocrinologist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The diet and exercise logging tools have helped me make better choices every day. I've been able to reduce my HbA1c by 1.5 points since starting with SugarCare!"</p>
+                        <div class="testimonial-author">
+                            <img src="images/user3.jpg" alt="David T.">
+                            <div>
+                                <h4>David T.</h4>
+                                <p>Type 1 Diabetes Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Address</h3>
+                            <p>123 Healthcare Street, Suite 456<br>Boston, MA 02115</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>(800) 555-1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>info@sugarcare.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 9am - 5pm<br>Saturday: 10am - 2pm<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" name="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" name="contactEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactSubject" name="contactSubject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="images/logo-white.png" alt="SugarCare Logo">
+                        <h1>Sugar<span>Care</span></h1>
+                    </div>
+                    <p>Comprehensive diabetes management for patients and healthcare providers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Glucose Tracking</a></li>
+                        <li><a href="#">Medication Management</a></li>
+                        <li><a href="#">Diet & Exercise</a></li>
+                        <li><a href="#">Doctor Connect</a></li>
+                        <li><a href="#">Lab Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and health tips.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SugarCare. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Login to Your Account</h2>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" name="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required>
+                    </div>
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <label for="rememberMe">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Login</button>
+                </form>
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                <div class="social-login">
+                    <button class="btn social-btn google-btn">
+                        <i class="fab fa-google"></i> Login with Google
+                    </button>
+                    <button class="btn social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i> Login with Facebook
+                    </button>
+                </div>
+                <div class="auth-switch">
+                    <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Create an Account</h2>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" name="registerUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" name="registerConfirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerRole">I am a:</label>
+                        <select id="registerRole" name="registerRole" required>
+                            <option value="">Select Role</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Healthcare Provider</option>
+                            <option value="caregiver">Caregiver</option>
+                        </select>
+                    </div>
+                    <div class="form-group terms">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Register</button>
+                </form>
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                <div class="social-login">
+                    <button class="btn social-btn google-btn">
+                        <i class="fab fa-google"></i> Register with Google
+                    </button>
+                    <button class="btn social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i> Register with Facebook
+                    </button>
+                </div>
+                <div class="auth-switch">
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

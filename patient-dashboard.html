@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard | SugarCare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="images/logo.png" alt="SugarCare Logo">
+                <h1>Sugar<span>Care</span></h1>
+            </div>
+        </div>
+        <div class="sidebar-profile">
+            <div class="profile-image">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Patient Profile">
+            </div>
+            <div class="profile-info">
+                <h3>Sarah Johnson</h3>
+                <p>Type 2 Diabetes</p>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="#overview">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#glucose">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Glucose Levels</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#medications">
+                        <i class="fas fa-pills"></i>
+                        <span>Medications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#diet">
+                        <i class="fas fa-utensils"></i>
+                        <span>Diet & Exercise</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#appointments">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#history">
+                        <i class="fas fa-history"></i>
+                        <span>Medical History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#labs">
+                        <i class="fas fa-flask"></i>
+                        <span>Lab Results</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 class="page-title">Overview</h2>
+            </div>
+            <div class="nav-right">
+                <div class="notifications">
+                    <button class="nav-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                </div>
+                <div class="messages">
+                    <button class="nav-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">1</span>
+                    </button>
+                </div>
+                <div class="user-menu">
+                    <div class="user-dropdown">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User">
+                        <span>Sarah J.</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content-wrapper">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Last Glucose Reading</h3>
+                            <p class="stat-value">126 <span>mg/dL</span></p>
+                            <p class="stat-time">2 hours after meal</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Next Medication</h3>
+                            <p class="stat-value">Metformin</p>
+                            <p class="stat-time">Due in 1 hour 15 min</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Upcoming Appointment</h3>
+                            <p class="stat-value">Dr. Smith</p>
+                            <p class="stat-time">Tomorrow at 10:30 AM</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Recent Activity</h3>
+                            <p class="stat-value">30 min walk</p>
+                            <p class="stat-time">Today at 7:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Glucose Trends</h3>
+                            <select class="chart-period">
+                                <option value="7">Last 7 Days</option>
+                                <option value="14">Last 14 Days</option>
+                                <option value="30">Last 30 Days</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="glucoseChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Medication Adherence</h3>
+                            <select class="chart-period">
+                                <option value="7">Last 7 Days</option>
+                                <option value="14">Last 14 Days</option>
+                                <option value="30">Last 30 Days</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="medicationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <div class="section-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#activity" class="btn secondary-btn">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Recorded glucose level: <strong>142 mg/dL</strong></p>
+                                <small>2 hours after lunch | Today at 2:30 PM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Took medication: <strong>Metformin 500mg</strong></p>
+                                <small>Today at 1:00 PM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Logged exercise: <strong>30 minute walk</strong></p>
+                                <small>Today at 7:00 AM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Logged meal: <strong>Breakfast - Oatmeal with berries</strong></p>
+                                <small>Today at 8:15 AM</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other sections (Glucose, Medications, etc.) would go here -->
+            <!-- Similar to the previous implementation but with the new layout -->
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/patient-dashboard.js"></script>
+</body>
+</html>
